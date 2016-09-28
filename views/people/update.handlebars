@@ -1,0 +1,22 @@
+{{#if logged_in}}
+
+{{#each this.people }}
+
+<h1>{{this.name}}'s Profile</h1>
+	<form action="/people/name/{{this.id}}?_method=PUT" method="POST">
+	  <input type="text" name="name">
+	  <button type="submit">Update Name</button>
+	</form>
+
+<h2>Tasks for {{this.name}}:</h2>
+
+
+{{#each this.Tasks }}
+<ul>
+<li>
+	{{this.task}}
+</li>
+</ul>
+{{/each}}
+{{/each}}
+{{/if}}
